@@ -1,44 +1,35 @@
 # Turing Machine
 
+> Status: Developed ✔️
+
+### A program that simulates a Turing Machine
+
 Turing Machine was designed by Alan Turing in 1936 and it is utilized to accept Recursive Enumerable Languages (created by Type-0 Grammar). 
  
- A turing machine consists of a tape of infinite length on which examined and composes operation can be performed. The tape comprises of boundless cells on which each cell either contains input symbol or a special symbol called blank. It moreover comprises of a head pointer which focuses to cell as of now being read and it can move in both directions.
+A turing machine consists of a tape of infinite length on which examined and composes operation can be performed. The tape comprises of boundless cells on which each cell either contains input symbol or a special symbol called blank. It moreover comprises of a head pointer which focuses to cell as of now being read and it can move in both directions.
+
+## Simulation of Turing Machine
+
+A Deterministic Standard Turing Machine simulator was implemented, which receives the specification of an Turing Machine and then a sequence of strings. The simulator must simulate the execution of the automaton for each chain and respond with “S” if the chain is accepted, or with “N” if the chain is not accepted.
 
 
-Deve-se implementar um simulador de máquinas de Turing padrão determinísticas,
-que receba a especificação de uma MT e a seguir uma sequência de cadeias. O
-simulador deve simular a execução do autômato para cada cadeia e responder com “S”
-se a cadeia for aceita, ou com “N” se a cadeia não for aceita.
-Entrada:
-A primeira linha da entrada conterá o alfabeto �, o qual deverá ser constituído apenas de
-dígitos (0 a 9), letras minúsculas (a até z) e sublinhado ( _ ).
-A segunda linha conterá o alfabeto � de símbolos da fita, o qual será constituído apenas
-por letras maiúsculas (A até Z). Nesta linha os símbolos pertencentes a � não devem estar
-incluídos. O símbolo ‘$’ será usado para representar o símbolo "espaço em branco”, e
-deverá estar incluído obrigatoriamente no início desta linha.
-A terceira linha conterá um inteiro Q (1 ≤ Q ≤ 10) indicando o número de estados da
-máquina. Os estados deverão ser numerados sequencialmente de 1 até Q.
-A quarta linha conterá um único inteiro S, indicando o estado inicial.
-A quinta linha conterá de 1 até no máximo Q inteiros, separados por espaço, indicando
-os estados finais da MT.
-A sexta linha conterá um inteiro D (1 ≤ D ≤ Q x |�| x |�| ) que indica o número de 1 2
-transições da MT.
-As D linhas seguintes conterão as transições da MT, uma por linha, na forma 
+## Input
+- The first input line will contain the alphabet (represented by $\sum$), which must consist only of digits (0 to 9), lowercase letters (a to z), and underscore ( _ ).
+- The second line will contain the alphabet $\Gamma$ of tape symbols, which will consist of capital letters only (A through Z). In this line the symbols belonging to $\sum$ must not be included. The symbol '$' will be used to represent the symbol "blank space", and must be included at the beginning of this line.
+- The third line will contain an integer Q (1 ≤ Q ≤ 10) indicating the number of machine states. The states must be numbered sequentially from 1 to Q.
+- The fourth line will contain a single integer S, indicating the initial state.
+- The fifth line will contain from 1 to at most Q integers, separated by spaces, indicating the final states of the Turing Machine.
+- The sixth line will contain an integer D (1 ≤ D ≤ Q x | | x | | ) that indicates the number of TM transitions.
+- The following D lines will contain the TM transitions, one per line, in the form “Qi si sj Dir Qj” that indicate the current state, the read symbol and the written symbol, the direction of movement (D = right, E = left) and the next state, respectively. After the transitions there will be a line with an integer N (1 ≤ N ≤ 100) that will indicate the number of test strings. The length of each string will not exceed 200 characters.
+- The following N lines will contain the strings to be analyzed. The strings will be enclosed between two '@' symbols. Two '@' symbols in a row will indicate an empty string.
 
-“Qi si sj Dir Qj” que indicam o estado corrente, o símbolo lido e o símbolo escrito, a
-direção do movimento (D = direita, E = esquerda) e o próximo estado, respectivamente.
-Após as transições haverá uma linha com um inteiro N (1 ≤ N ≤ 100) que indicará o
-número de cadeias de teste. O comprimento de cada cadeia não excederá 200
-caracteres.
-As N linhas seguintes conterão as cadeias a serem analisadas. As cadeias estarão contidas
-entre dois símbolos ‘@‘. Dois símbolos ‘@‘ seguidos indicarão uma cadeia vazia.
-Saída:
-Para cada cadeia a ser analisada, o simulador deve imprimir três linhas de dados: a cadeia
-original na primeira linha, a cadeia final na segunda linha e a resposta da MT na terceira
-linha. 
+## Output
 
-Exemplo:
-Entrada 
+For each string to be analyzed, the simulator must print three lines of data: the original string on the first line, the final string on the second line, and the MT response on the third line.
+
+## Example
+
+Input 
 01
 $
 3
@@ -61,7 +52,7 @@ $
 @001@
 @010@
 
-Saída
+Output
 @@
 @@
 S
@@ -92,3 +83,6 @@ S
 @010@
 @101@
 S
+
+## Technologies Used:
+[C++](https://www.cplusplus.com)
